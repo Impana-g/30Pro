@@ -1,14 +1,23 @@
 *{
-  margin:0;
-  padding:0;
-  font-family:'poppins',sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
+
 .container{
-  height:100vh;
-  width:100%;
-  background-image: url(images/background.png);
+  height: 100vh;
+  width: 100%;
+  background-image: url("images/background.png");
   background-position: center;
-  background-size: center;
-  padding: 0 8%;
+  background-size: cover;
+  padding: 20px 8%;
+  position: relative;   /* ⭐ REQUIRED */
+}
+
+.logo{
+  width: 140px;
+  display: block;
+  position: relative;
+  z-index: 10;          /* ⭐ BRINGS IT ABOVE BG */
 }
