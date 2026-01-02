@@ -52,3 +52,30 @@ color:#ff375f
 
 
 }
+.launch-time{
+  display: flex;
+  gap: 20px;          /* spacing between items */
+}
+
+.launch-time div{
+  flex-basis: 100px;
+  text-align: center; /* keeps numbers aligned */
+}
+.rocket{
+  width: 250 px;
+  position:absolute;
+  right:10%;
+  bottom: 0;
+  animation: rocket 4s linear infinite;
+}
+@keyframes rocket {
+  0%{
+    bottom:0;
+    opacity:0;
+  }
+  100%{
+    bottom:100%;
+    opacity:1;
+  }
+  
+}

@@ -6,30 +6,68 @@
   <title>Coming soon Page - Easy Tutorials</title>
   <link href="style.css" rel ="stylesheet" type="text/css"></head>
 <body>
-  <div class="container">
-    <img src="images/logo.png" class="logo" alt="Logo">
-    <div class="content">
-      <p>Website is  under maintenance</p>
-      <h1>We,re <span>Launching</span>Soon</h1>
-      <div class="Launch-time">
-        <div>
-          <p>00</p>
-          <span>Days</span>
-        </div>
-         <div>
-          <p>00</p>
-          <span>Hours</span>
-        </div>
-         <div>
-          <p>00</p>
-          <span>Minutes</span>
-           <div>
-          <p>00</p>
-          <span>Seconds</span>
-        </div>
+ <div class="container">
+  <img src="images/logo.png" class="logo" alt="Logo">
+
+  <div class="content">
+    <p>Website is under maintenance</p>
+    <h1>We’re <span>Launching</span> Soon</h1>
+
+    <div class="launch-time">
+      <div>
+        <p id="days00">00</p>
+        <span>Days</span>
       </div>
-      <button type="button">Learn More <img src="images/triangle.png" ></button>    </div>
+
+      <div>
+        <p id="hours00">00</p>
+        <span>Hours</span>
+      </div>
+
+      <div>
+        <p id="minutes00" >00</p>
+        <span>Minutes</span>
+      </div>
+
+      <div>
+        <p id="seconds00" >00</p>
+        <span>Seconds</span>
+      </div>
+    </div>
+
+    <button type="button">
+      Learn More <img src="images/triangle.png" alt="">
+    </button>
   </div>
+  <img src="images/rocket.png" class="rocket" alt="Rocket">
+</div>
+<script>
+  var countDownDate = new Date("Jul 31, 2026 15:37:25").getTime();
+
+  var x = setInterval(function () {
+
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days00").innerHTML = String(days).padStart(2, "0");
+    document.getElementById("hours00").innerHTML = String(hours).padStart(2, "0");
+    document.getElementById("minutes00").innerHTML = String(minutes).padStart(2, "0");
+    document.getElementById("seconds00").innerHTML = String(seconds).padStart(2, "0");
+
+    if (distance < 0) {
+      clearInterval(x);
+      document.querySelector(".launch-time").innerHTML = "Launched!";
+    }
+
+  }, 1000);
+</script>
+
+
 </body>
 
 </html>
